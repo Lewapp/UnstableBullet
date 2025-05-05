@@ -163,14 +163,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa26eeecae96a1c418b0fc7069401ea5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootingType: 1
-  spawnObjects:
-  - {fileID: 592111278243067111, guid: 058d705c68a95fe4ea9955429fbae1bc, type: 3}
-  bulletspeed: 8
-  rotationType: 2
-  spawnDelay: 0.2
-  rotationPerSpawn: 5
-  rotationPerTick: 5
+  bulletPatterns:
+  - spawnObject: {fileID: 592111278243067111, guid: 058d705c68a95fe4ea9955429fbae1bc, type: 3}
+    bulletModifiers: 01000000
+    bulletspeed: 8
+    shootingType: 1
+    rotationType: 2
+    spawnDelay: 0.2
+    rotationPerSpawn: 0
+    rotationPerTick: 15
+    frequency: 4
+    amplitude: 1
+    timeSinceLastBullet: 0
+    currentRotation: 0
+  - spawnObject: {fileID: 592111278243067111, guid: 058d705c68a95fe4ea9955429fbae1bc, type: 3}
+    bulletModifiers: 01000000
+    bulletspeed: 8
+    shootingType: 1
+    rotationType: 2
+    spawnDelay: 0.2
+    rotationPerSpawn: 0
+    rotationPerTick: 15
+    frequency: -4
+    amplitude: 1
+    timeSinceLastBullet: 0
+    currentRotation: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
