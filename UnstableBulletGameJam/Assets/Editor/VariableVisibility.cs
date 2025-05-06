@@ -20,6 +20,9 @@ public class BulletPatternerEditor : Editor
         EditorGUILayout.LabelField("Bullet Patterns", EditorStyles.boldLabel);
         EditorGUI.indentLevel++;
 
+        SerializedProperty isLeftSide = serializedObject.FindProperty("isLeftSide");
+        EditorGUILayout.PropertyField(isLeftSide);
+
         int newSize = EditorGUILayout.IntField("Size", bulletPatterns.arraySize);
         if (newSize != bulletPatterns.arraySize)
         {
@@ -63,10 +66,18 @@ public class BulletPatternerEditor : Editor
         SerializedProperty bulletSpeed = pattern.FindPropertyRelative("bulletspeed");
         SerializedProperty shootingType = pattern.FindPropertyRelative("shootingType");
 
-        SerializedProperty rotationType = pattern.FindPropertyRelative("rotationType");
         SerializedProperty spawnDelay = pattern.FindPropertyRelative("spawnDelay");
+
+        SerializedProperty amountPerBurst = pattern.FindPropertyRelative("amountPerBurst");
+        SerializedProperty delayPerBurst = pattern.FindPropertyRelative("delayPerBurst");
+        SerializedProperty intervalPerShot = pattern.FindPropertyRelative("intervalPerShot");
+
+        SerializedProperty rotationType = pattern.FindPropertyRelative("rotationType");
         SerializedProperty rotationPerSpawn = pattern.FindPropertyRelative("rotationPerSpawn");
         SerializedProperty rotationPerTick = pattern.FindPropertyRelative("rotationPerTick");
+        SerializedProperty playerOffset = pattern.FindPropertyRelative("playerOffset");
+        SerializedProperty randomRotRange = pattern.FindPropertyRelative("randomRotRange");
+        SerializedProperty randomRotOffset = pattern.FindPropertyRelative("randomRotOffset");
 
         SerializedProperty frequency = pattern.FindPropertyRelative("frequency");
         SerializedProperty amplitude = pattern.FindPropertyRelative("amplitude");
@@ -79,15 +90,40 @@ public class BulletPatternerEditor : Editor
         var currentPType = (BulletPatterner.PatternType)shootingType.enumValueIndex;
         if (currentPType == BulletPatterner.PatternType.Continouous)
         {
-            EditorGUILayout.PropertyField(rotationType);
             EditorGUILayout.PropertyField(spawnDelay);
-
-            var currentRType = (BulletPatterner.RotationType)rotationType.enumValueIndex;
-            if (currentRType == BulletPatterner.RotationType.Spawn)
-                EditorGUILayout.PropertyField(rotationPerSpawn);
-            else if (currentRType == BulletPatterner.RotationType.Time)
-                EditorGUILayout.PropertyField(rotationPerTick);
         }
+        else if (currentPType == BulletPatterner.PatternType.Burst)
+        {
+            EditorGUILayout.PropertyField(amountPerBurst);
+            EditorGUILayout.PropertyField(delayPerBurst);
+            EditorGUILayout.PropertyField(intervalPerShot);
+
+            float totalWaitTime = amountPerBurst.floatValue * intervalPerShot.floatValue;
+            if (totalWaitTime > delayPerBurst.floatValue)
+            {
+                intervalPerShot.floatValue = delayPerBurst.floatValue / amountPerBurst.floatValue;
+            }
+        }
+
+            EditorGUILayout.PropertyField(rotationType);
+        var currentRType = (BulletPatterner.RotationType)rotationType.enumValueIndex;
+        switch (currentRType)
+        {
+            case BulletPatterner.RotationType.Spawn:
+                EditorGUILayout.PropertyField(rotationPerSpawn);
+                break;
+            case BulletPatterner.RotationType.Time:
+                EditorGUILayout.PropertyField(rotationPerTick);
+                break;
+            case BulletPatterner.RotationType.Player:
+                EditorGUILayout.PropertyField(playerOffset);
+                break;
+            case BulletPatterner.RotationType.Random:
+                EditorGUILayout.PropertyField(randomRotRange);
+                EditorGUILayout.PropertyField(randomRotOffset);
+                break;
+        }
+
 
         if (HasModifier(bulletModifiers, BulletPatterner.BulletModifier.Sine))
         {
