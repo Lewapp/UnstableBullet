@@ -124,6 +124,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b24d147ebb18584193d53b9a3f14c6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collisionTags:
+  - Arena
 --- !u!1 &7141610128174028747
 GameObject:
   m_ObjectHideFlags: 0

@@ -100,6 +100,7 @@ GameObject:
   - component: {fileID: 5833076853936842570}
   - component: {fileID: 953929874301846710}
   - component: {fileID: 1529473267590559804}
+  - component: {fileID: 2879700887147747146}
   - component: {fileID: 4447803029553620735}
   m_Layer: 0
   m_Name: Player
@@ -201,15 +202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 15
-  attackMovement: 15
-  shieldedMoveSpeed: 7
-  dashSpeed: 40
-  weakDashNerf: 0.3
-  dashDuration: 0.1
-  dashCooldown: 2.5
-  maxDashAmount: 3
-  maxWeakDashAmount: 4
-  dashSound: {fileID: 4246440581595593653, guid: ce8afed84f485db4eb4343133025de5b, type: 3}
+  swapObject: {fileID: 0}
 --- !u!114 &1529473267590559804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,6 +217,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lookSpeed: 10
   offset: -90
+--- !u!114 &2879700887147747146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5734169599679116977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbab79415c7658e4ab9dbca11de70fb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 0}
+  tickRate: 0
+  projectileSpeed: 0
 --- !u!114 &4447803029553620735
 MonoBehaviour:
   m_ObjectHideFlags: 0

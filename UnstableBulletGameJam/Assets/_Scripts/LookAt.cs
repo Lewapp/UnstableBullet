@@ -8,7 +8,7 @@ public class LookAt : MonoBehaviour
     // Additional angle offset applied to the rotation 
     public float offset;
 
-    void Update()
+    private void Update()
     {
         // Get the current player position
         Vector3 targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);

@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class BulletPatterner : MonoBehaviour
 {
+    [HideInInspector]
     public bool isLeftSide;
 
     [Serializable]
@@ -34,6 +35,7 @@ public class BulletPatterner : MonoBehaviour
         public RotationType rotationType;
         public float rotationPerSpawn;
         public float rotationPerTick;
+        public bool offsetApplied;
         [Range(0f, 360f)]
         public float playerOffset;
         public Vector2 randomRotRange;
@@ -58,6 +60,9 @@ public class BulletPatterner : MonoBehaviour
             {
                 case RotationType.Time:
                     bulletPatterns[i].currentRotation = Mathf.Repeat(bulletPatterns[i].currentRotation + bulletPatterns[i].rotationPerTick * Time.deltaTime, 360f);
+                    if (!bulletPatterns[i].offsetApplied)
+                        bulletPatterns[i].currentRotation += transform.eulerAngles.z;
+                    bulletPatterns[i].offsetApplied = true;
                     break;
                 case RotationType.Player:
                     Vector2 thisPlayer = FocusedPlayer();
@@ -127,6 +132,9 @@ public class BulletPatterner : MonoBehaviour
         {
             case RotationType.Spawn:
                 bulletPatterns[index].currentRotation = Mathf.Repeat(bulletPatterns[index].currentRotation + Mathf.Max(bulletPatterns[index].rotationPerSpawn, 0.1f), 360f);
+                if (!bulletPatterns[index].offsetApplied)
+                    bulletPatterns[index].currentRotation += transform.eulerAngles.z;
+                bulletPatterns[index].offsetApplied = true;
                 break;
             case RotationType.Random:
                 bulletPatterns[index].currentRotation = UnityEngine.Random.Range(bulletPatterns[index].randomRotRange.x, bulletPatterns[index].randomRotRange.y) + bulletPatterns[index].randomRotOffset;
@@ -134,7 +142,6 @@ public class BulletPatterner : MonoBehaviour
         }
            
         GameObject spawn = Instantiate(bulletPatterns[index].spawnObject, transform.position, Quaternion.Euler(0, 0, bulletPatterns[index].currentRotation));
-        spawn.transform.SetParent(transform);
         Rigidbody2D rb = spawn.GetComponent<Rigidbody2D>();
     
 

@@ -9,14 +9,13 @@ public class Sinewave : MonoBehaviour
     private Vector2 sideways;
     private float totalTime = 0f;
 
-    void Start()
+    private void Start()
     {
         sideways = new Vector2(-transform.up.y, transform.up.x).normalized;
     }
 
-    void LateUpdate()
+    private void LateUpdate()
     {
-        // Remove the last frame's offset before applying the new one
         transform.position -= previousOffset;
 
         float sine = Mathf.Sin(totalTime * frequency) * amplitude;

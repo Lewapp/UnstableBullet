@@ -20,9 +20,6 @@ public class BulletPatternerEditor : Editor
         EditorGUILayout.LabelField("Bullet Patterns", EditorStyles.boldLabel);
         EditorGUI.indentLevel++;
 
-        SerializedProperty isLeftSide = serializedObject.FindProperty("isLeftSide");
-        EditorGUILayout.PropertyField(isLeftSide);
-
         int newSize = EditorGUILayout.IntField("Size", bulletPatterns.arraySize);
         if (newSize != bulletPatterns.arraySize)
         {

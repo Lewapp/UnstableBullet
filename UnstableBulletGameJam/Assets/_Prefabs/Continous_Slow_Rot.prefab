@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8935702367861715175
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2810596076994911953}
+  - component: {fileID: 6592971326479726461}
+  m_Layer: 0
+  m_Name: Continous_Slow_Rot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2810596076994911953
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8935702367861715175}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -15, y: 0, z: 0.024138726}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6592971326479726461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8935702367861715175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa26eeecae96a1c418b0fc7069401ea5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isLeftSide: 1
+  bulletPatterns:
+  - spawnObject: {fileID: 592111278243067111, guid: 058d705c68a95fe4ea9955429fbae1bc, type: 3}
+    bulletModifiers: 
+    bulletspeed: 5
+    shootingType: 1
+    timeSinceLastBullet: 0
+    currentRotation: 0
+    spawnDelay: 0.5
+    amountPerBurst: 0
+    delayPerBurst: 0
+    intervalPerShot: 0
+    timeSinceLastBurst: 0
+    rotationType: 2
+    rotationPerSpawn: 0
+    rotationPerTick: 15
+    playerOffset: 0
+    randomRotRange: {x: 0, y: 0}
+    randomRotOffset: 0
+    frequency: 0
+    amplitude: 0
