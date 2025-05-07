@@ -2,7 +2,7 @@ using System;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 
-public class BossDesign : MonoBehaviour
+public class ProjectileManager : MonoBehaviour
 {
     [Serializable]
     public class BossStage
