@@ -14,6 +14,7 @@ public class EnemySpawner : MonoBehaviour
     [Serializable]
     public class EnemySpawnSetUp
     {
+        public bool attached;
         public GameObject type;
         public float cooldown;
 
@@ -63,10 +64,32 @@ public class EnemySpawner : MonoBehaviour
             {
                 bossStages[stageIndex].enemyTypes[i].currentTick = 0f;
                 bossStages[stageIndex].enemyTypes[i].spawnInstance = Instantiate(bossStages[stageIndex].enemyTypes[i].type, transform.position, Quaternion.identity);
+
+                if (!bossStages[stageIndex].enemyTypes[i].attached)
+                    SetUpRandomPosition(stageIndex, i);
             }
 
             bossStages[stageIndex].enemyTypes[i].currentTick += Time.deltaTime;
         }
+    }
+
+    private void SetUpRandomPosition(int stageIndex, int enemyIndex)
+    {
+        RandomPosition randomPosition = bossStages[stageIndex].enemyTypes[enemyIndex].spawnInstance.AddComponent<RandomPosition>();
+        
+        if (transform.position.x < 0)
+        {
+            randomPosition.outterBorderL = new Vector2(-28f, -15f);
+            randomPosition.outterBorderU = new Vector2(-2f, 15f);
+            randomPosition.innerBorderL = new Vector2(-22f, -6f);
+            randomPosition.innerBorderU = new Vector2(-8f, 6f);
+            return;
+        }
+
+        randomPosition.outterBorderL = new Vector2(28f, -15f);
+        randomPosition.outterBorderU = new Vector2(2f, 15f);
+        randomPosition.innerBorderL = new Vector2(22f, -6f);
+        randomPosition.innerBorderU = new Vector2(8f, 6f);
     }
 
     private void SetCooldowns()

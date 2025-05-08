@@ -526,10 +526,11 @@ GameObject:
   m_Component:
   - component: {fileID: 897064890}
   - component: {fileID: 897064889}
+  - component: {fileID: 897064891}
   - component: {fileID: 897064888}
   m_Layer: 0
   m_Name: CPUBoss
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -546,6 +547,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bd40a4a79ebf034692ffba17ff92b09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bossStages:
+  - stage: Stage One
+    enemyTypes:
+    - attached: 0
+      type: {fileID: 4237790583221293036, guid: c1ce22a54c7b5e64bb4ee720f15f9c0e, type: 3}
+      cooldown: 20
+      spawnInstance: {fileID: 0}
+      currentTick: 0
+    healthTrigger: {x: 0, y: 0.9}
 --- !u!58 &897064889
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -598,6 +608,20 @@ Transform:
   - {fileID: 852666790}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &897064891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897064887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3eb9399b57dc31a48a9dfbd231835f82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 200
+  health: 0
 --- !u!1 &965134737
 GameObject:
   m_ObjectHideFlags: 0
