@@ -75,6 +75,7 @@ public class BulletPatternerEditor : Editor
         SerializedProperty playerOffset = pattern.FindPropertyRelative("playerOffset");
         SerializedProperty randomRotRange = pattern.FindPropertyRelative("randomRotRange");
         SerializedProperty randomRotOffset = pattern.FindPropertyRelative("randomRotOffset");
+        SerializedProperty forwardOffset = pattern.FindPropertyRelative("forwardOffset");
 
         SerializedProperty frequency = pattern.FindPropertyRelative("frequency");
         SerializedProperty amplitude = pattern.FindPropertyRelative("amplitude");
@@ -118,6 +119,9 @@ public class BulletPatternerEditor : Editor
             case BulletPatterner.RotationType.Random:
                 EditorGUILayout.PropertyField(randomRotRange);
                 EditorGUILayout.PropertyField(randomRotOffset);
+                break;
+            case BulletPatterner.RotationType.Forward:
+                EditorGUILayout.PropertyField(forwardOffset);
                 break;
         }
 

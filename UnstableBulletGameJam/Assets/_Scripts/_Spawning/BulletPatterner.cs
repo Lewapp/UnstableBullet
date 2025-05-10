@@ -41,6 +41,8 @@ public class BulletPatterner : MonoBehaviour
         public Vector2 randomRotRange;
         [Range(0f, 360f)]
         public float randomRotOffset;
+        [Range(0f, 360f)]
+        public float forwardOffset;
 
         [Header("Sine Modifier")]
         public float frequency;
@@ -139,6 +141,9 @@ public class BulletPatterner : MonoBehaviour
             case RotationType.Random:
                 bulletPatterns[index].currentRotation = UnityEngine.Random.Range(bulletPatterns[index].randomRotRange.x, bulletPatterns[index].randomRotRange.y) + bulletPatterns[index].randomRotOffset;
                 break;
+            case RotationType.Forward:
+                bulletPatterns[index].currentRotation = transform.eulerAngles.z + bulletPatterns[index].forwardOffset;
+                break;
         }
            
         GameObject spawn = Instantiate(bulletPatterns[index].spawnObject, transform.position, Quaternion.Euler(0, 0, bulletPatterns[index].currentRotation));
@@ -175,7 +180,7 @@ public class BulletPatterner : MonoBehaviour
 
     public enum RotationType
     {
-        None, Spawn, Time, Player, Random
+        None, Spawn, Time, Player, Random, Forward
     }
 
     public enum BulletModifier

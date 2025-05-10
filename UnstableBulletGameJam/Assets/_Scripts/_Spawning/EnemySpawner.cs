@@ -14,7 +14,7 @@ public class EnemySpawner : MonoBehaviour
     [Serializable]
     public class EnemySpawnSetUp
     {
-        public bool attached;
+        public GameObject attachPoint;
         public GameObject type;
         public float cooldown;
 
@@ -65,17 +65,32 @@ public class EnemySpawner : MonoBehaviour
                 bossStages[stageIndex].enemyTypes[i].currentTick = 0f;
                 bossStages[stageIndex].enemyTypes[i].spawnInstance = Instantiate(bossStages[stageIndex].enemyTypes[i].type, transform.position, Quaternion.identity);
 
-                if (!bossStages[stageIndex].enemyTypes[i].attached)
-                    SetUpRandomPosition(stageIndex, i);
+                AttachToSelf(stageIndex, i);
             }
 
             bossStages[stageIndex].enemyTypes[i].currentTick += Time.deltaTime;
         }
     }
 
+    private void AttachToSelf(int stageIndex, int enemyIndex)
+    {
+        if (!bossStages[stageIndex].enemyTypes[enemyIndex].attachPoint)
+        {
+            SetUpRandomPosition(stageIndex, enemyIndex);
+            return;
+        }
+
+        bossStages[stageIndex].enemyTypes[enemyIndex].spawnInstance.transform.SetParent(bossStages[stageIndex].enemyTypes[enemyIndex].attachPoint.transform);
+        bossStages[stageIndex].enemyTypes[enemyIndex].spawnInstance.transform.localPosition = Vector3.zero;
+        bossStages[stageIndex].enemyTypes[enemyIndex].spawnInstance.transform.localEulerAngles = Vector3.zero;
+    }
+
     private void SetUpRandomPosition(int stageIndex, int enemyIndex)
     {
-        RandomPosition randomPosition = bossStages[stageIndex].enemyTypes[enemyIndex].spawnInstance.AddComponent<RandomPosition>();
+        RandomPosition randomPosition = bossStages[stageIndex].enemyTypes[enemyIndex].spawnInstance.GetComponent<RandomPosition>();
+
+        if (randomPosition == null)
+            return;
         
         if (transform.position.x < 0)
         {
@@ -91,6 +106,7 @@ public class EnemySpawner : MonoBehaviour
         randomPosition.innerBorderL = new Vector2(22f, -6f);
         randomPosition.innerBorderU = new Vector2(8f, 6f);
     }
+
 
     private void SetCooldowns()
     {
