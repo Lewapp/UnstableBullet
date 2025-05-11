@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7379098678492282388}
   - component: {fileID: 8010943091773485133}
   m_Layer: 6
-  m_Name: Bullet_Default
+  m_Name: Bullet_Default_Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4804485080970643bfd9586dd5546df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifetime: 5
+  lifetime: 10
 --- !u!114 &8010943091773485133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,7 +205,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4fc80a735b9b3e34f87c8b72e688d64a, type: 3}
-  m_Color: {r: 0.8301887, g: 0.81141406, b: 0.30153078, a: 1}
+  m_Color: {r: 0.83137256, g: 0.3526, b: 0.30196077, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

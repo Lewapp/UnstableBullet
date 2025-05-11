@@ -52,16 +52,18 @@ MonoBehaviour:
     shootingType: 1
     timeSinceLastBullet: 0
     currentRotation: 0
-    spawnDelay: 0.5
+    spawnDelay: 0.7
     amountPerBurst: 0
     delayPerBurst: 0
     intervalPerShot: 0
     timeSinceLastBurst: 0
     rotationType: 2
     rotationPerSpawn: 0
-    rotationPerTick: 15
+    rotationPerTick: 10
+    offsetApplied: 0
     playerOffset: 0
     randomRotRange: {x: 0, y: 0}
     randomRotOffset: 0
+    forwardOffset: 0
     frequency: 0
     amplitude: 0

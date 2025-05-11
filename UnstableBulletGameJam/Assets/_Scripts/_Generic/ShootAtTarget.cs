@@ -3,10 +3,17 @@ using UnityEngine;
 public class ShootAtTarget : MonoBehaviour
 {
     public GameObject projectile;
+    public Transform spawnTransform;
     public float tickRate;
     public float projectileSpeed;
 
     private float currentTime;
+
+    private void Start()
+    {
+        if (spawnTransform == null)
+            spawnTransform = transform;
+    }
 
     public void Update()
     {
@@ -23,7 +30,7 @@ public class ShootAtTarget : MonoBehaviour
             Vector2 direction = mousePos - transform.position;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-            GameObject spawnedProjectile = Instantiate(projectile, transform.position, Quaternion.Euler(0f, 0f, angle));
+            GameObject spawnedProjectile = Instantiate(projectile, spawnTransform.position, Quaternion.Euler(0f, 0f, angle));
             ApplyProjectileForce(spawnedProjectile);
         }
     }

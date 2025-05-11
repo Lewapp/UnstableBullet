@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4923228737193834721
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5280720516908003859}
+  m_Layer: 0
+  m_Name: ProjectileSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5280720516908003859
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4923228737193834721}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.066, y: 0.915, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 522124176060383667}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5734169599679116977
 GameObject:
   m_ObjectHideFlags: 0
@@ -37,6 +68,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4639196580745522840}
+  - {fileID: 5280720516908003859}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &3106717478308577018
@@ -144,9 +176,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbab79415c7658e4ab9dbca11de70fb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 0}
-  tickRate: 0
-  projectileSpeed: 0
+  projectile: {fileID: 7367694205018042013, guid: 1ba9f55511aeb7e4a8c31c5c0f679257, type: 3}
+  spawnTransform: {fileID: 5280720516908003859}
+  tickRate: 0.5
+  projectileSpeed: 10
 --- !u!114 &1599141640550486915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,7 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eb9399b57dc31a48a9dfbd231835f82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 3
+  maxHealth: 5
   health: 0
 --- !u!114 &4447803029553620735
 MonoBehaviour:

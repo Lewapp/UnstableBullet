@@ -81,7 +81,7 @@
                     "name": "Sprint",
                     "type": "Button",
                     "id": "641cd816-40e6-41b4-8c3d-04687c349290",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -219,6 +219,61 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "2D Vector",
+                    "id": "16d4e1aa-d7ff-4d75-a654-55657956a9d0",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "bc36603c-3f0c-48da-9b84-3618b00ccf6f",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "82981aa9-87fa-46c1-bc33-cfd53f77d61c",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "15aae968-1eec-4c94-b74b-1a948336562a",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "2342d1e6-432b-4750-bd9e-ddf82cdfeb4a",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 },
                 {
                     "name": "",
@@ -376,6 +431,28 @@
                 },
                 {
                     "name": "",
+                    "id": "a2863393-0a22-443e-aaba-21b9085e8938",
+                    "path": "<Keyboard>/numpad1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Sprint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "82f75b85-75c4-4dee-8c51-f135e1bfbea8",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Sprint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "eb40bb66-4559-4dfa-9a2f-820438abb426",
                     "path": "<Keyboard>/space",
                     "interactions": "",
@@ -403,6 +480,28 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "XR",
+                    "action": "Swap",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e7a58eaf-bc24-4381-9462-3c067a7f8644",
+                    "path": "<Keyboard>/numpad0",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Swap",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6af40015-1256-4659-836e-77c97bbef9ae",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
                     "action": "Swap",
                     "isComposite": false,
                     "isPartOfComposite": false

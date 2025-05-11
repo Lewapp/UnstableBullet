@@ -5,6 +5,11 @@ public class MainMenu : MonoBehaviour
 {
     public GameObject creditsMenu;
 
+    private void Start()
+    {
+        Time.timeScale = 1f;
+    }
+
     public void StartGame()
     {
         SceneManager.LoadScene(1);

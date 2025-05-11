@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLeftSide: 1
   bulletPatterns:
-  - spawnObject: {fileID: 592111278243067111, guid: 058d705c68a95fe4ea9955429fbae1bc, type: 3}
+  - spawnObject: {fileID: 592111278243067111, guid: 80a105c1ca552e248b418b3a13a9c30e, type: 3}
     bulletModifiers: 01000000
     bulletspeed: 7
     shootingType: 1

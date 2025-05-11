@@ -111,13 +111,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3129357021319396445}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: -3.3, y: -0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 762302090678034201}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!1 &3649155753629429865
 GameObject:
   m_ObjectHideFlags: 0
@@ -319,7 +319,7 @@ MonoBehaviour:
     enemyTypes:
     - attachPoint: {fileID: 0}
       type: {fileID: 4237790583221293036, guid: c1ce22a54c7b5e64bb4ee720f15f9c0e, type: 3}
-      cooldown: 20
+      cooldown: 40
       spawnInstance: {fileID: 0}
       currentTick: 0
     healthTrigger: {x: 0, y: 0.9}
@@ -340,7 +340,7 @@ MonoBehaviour:
       currentTick: 0
     - attachPoint: {fileID: 0}
       type: {fileID: 4237790583221293036, guid: c1ce22a54c7b5e64bb4ee720f15f9c0e, type: 3}
-      cooldown: 20
+      cooldown: 40
       spawnInstance: {fileID: 0}
       currentTick: 0
     healthTrigger: {x: 0, y: 0.7}
@@ -348,7 +348,7 @@ MonoBehaviour:
     enemyTypes:
     - attachPoint: {fileID: 3649155753629429865}
       type: {fileID: 2846720107460776793, guid: 48c8d7cb664094641a085c10933b9aa4, type: 3}
-      cooldown: 15
+      cooldown: 30
       spawnInstance: {fileID: 0}
       currentTick: 0
     healthTrigger: {x: 0, y: 0.65}
@@ -356,7 +356,7 @@ MonoBehaviour:
     enemyTypes:
     - attachPoint: {fileID: 3129357021319396445}
       type: {fileID: 2846720107460776793, guid: 48c8d7cb664094641a085c10933b9aa4, type: 3}
-      cooldown: 15
+      cooldown: 30
       spawnInstance: {fileID: 0}
       currentTick: 0
     healthTrigger: {x: 0, y: 0.6}
@@ -364,12 +364,12 @@ MonoBehaviour:
     enemyTypes:
     - attachPoint: {fileID: 4717038355499780497}
       type: {fileID: 2846720107460776793, guid: 48c8d7cb664094641a085c10933b9aa4, type: 3}
-      cooldown: 15
+      cooldown: 30
       spawnInstance: {fileID: 0}
       currentTick: 0
     - attachPoint: {fileID: 4733875030668161451}
       type: {fileID: 2846720107460776793, guid: 48c8d7cb664094641a085c10933b9aa4, type: 3}
-      cooldown: 15
+      cooldown: 30
       spawnInstance: {fileID: 0}
       currentTick: 0
     healthTrigger: {x: 0, y: 0.5}
@@ -407,6 +407,16 @@ MonoBehaviour:
       spawnInstance: {fileID: 0}
       currentTick: 0
     healthTrigger: {x: 0, y: 0.75}
+  - stage: Stage Three
+    bulletSpawns:
+    - attached: 1
+      spawnType: {fileID: 3265992959750568073, guid: a2e392dff2aff0040a26f771fe101912, type: 3}
+      spawnTick: 0
+      lifeTime: 0
+      spawnRotation: 0
+      spawnInstance: {fileID: 0}
+      currentTick: 0
+    healthTrigger: {x: 0, y: 0.4}
 --- !u!114 &2710110875794449001
 MonoBehaviour:
   m_ObjectHideFlags: 0

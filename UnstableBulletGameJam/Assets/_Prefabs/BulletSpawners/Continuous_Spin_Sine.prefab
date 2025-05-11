@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6406377218268296101}
   - component: {fileID: 897428662763708458}
   m_Layer: 0
-  m_Name: BulletTester
+  m_Name: Continuous_Spin_Sine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLeftSide: 1
   bulletPatterns:
-  - spawnObject: {fileID: 592111278243067111, guid: 058d705c68a95fe4ea9955429fbae1bc, type: 3}
+  - spawnObject: {fileID: 592111278243067111, guid: 0192e2d32b2e7ec44b3937156aa8d70b, type: 3}
     bulletModifiers: 01000000
     bulletspeed: 8
     shootingType: 1
@@ -57,15 +57,17 @@ MonoBehaviour:
     delayPerBurst: 4
     intervalPerShot: 0.5
     timeSinceLastBurst: 0
-    rotationType: 3
+    rotationType: 2
     rotationPerSpawn: 0
     rotationPerTick: 15
+    offsetApplied: 0
     playerOffset: 0
     randomRotRange: {x: 0, y: 360}
     randomRotOffset: 0
+    forwardOffset: 0
     frequency: 4
     amplitude: 1
-  - spawnObject: {fileID: 592111278243067111, guid: 058d705c68a95fe4ea9955429fbae1bc, type: 3}
+  - spawnObject: {fileID: 592111278243067111, guid: 0192e2d32b2e7ec44b3937156aa8d70b, type: 3}
     bulletModifiers: 01000000
     bulletspeed: 8
     shootingType: 1
@@ -76,11 +78,13 @@ MonoBehaviour:
     delayPerBurst: 4
     intervalPerShot: 0.5
     timeSinceLastBurst: 0
-    rotationType: 3
+    rotationType: 2
     rotationPerSpawn: 0
-    rotationPerTick: 15
+    rotationPerTick: -15
+    offsetApplied: 0
     playerOffset: 0
     randomRotRange: {x: 0, y: 360}
     randomRotOffset: 0
+    forwardOffset: 0
     frequency: -4
     amplitude: 1

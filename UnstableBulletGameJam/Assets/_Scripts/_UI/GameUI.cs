@@ -20,17 +20,25 @@ public class GameUI : MonoBehaviour
 
         AssignDamageable(player, playerHealthTXT, "Health:");
 
-        if (!l_CPU || l_CPUTXT == null)
-            return;
+        if (l_CPU && l_CPUTXT != null)
+        {
+            AssignDamageable(l_CPU, l_CPUTXT, "CPU:");
+            l_CPUTXT.text = l_CPUTXT.text + "%";
+        }
+        else if (l_CPUTXT != null)
+        {
+            l_CPUTXT.text = "CPU: 0%";
+        }
 
-        AssignDamageable(l_CPU, l_CPUTXT, "CPU:");
-        l_CPUTXT.text = l_CPUTXT.text + "%";
-
-        if (!r_CPU || r_CPUTXT == null)
-            return;
-
-        AssignDamageable(r_CPU, r_CPUTXT, "CPU:");
-        r_CPUTXT.text = r_CPUTXT.text + "%";
+        if (r_CPU && r_CPUTXT != null)
+        {
+            AssignDamageable(r_CPU, r_CPUTXT, "CPU:");
+            r_CPUTXT.text = r_CPUTXT.text + "%";
+        }
+        else if (r_CPUTXT != null)
+        {
+            r_CPUTXT.text = "CPU: 0%";
+        }
     }
 
     private void AssignDamageable(GameObject go, TextMeshProUGUI txtGo, string text)
