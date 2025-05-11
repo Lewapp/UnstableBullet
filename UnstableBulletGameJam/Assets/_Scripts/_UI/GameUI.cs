@@ -9,16 +9,18 @@ public class GameUI : MonoBehaviour
     public GameObject r_CPU;
 
     [Header("Text UI")]
-    public TextMeshProUGUI playerHealthTXT;
+    public TextMeshProUGUI playerHealthTXT_L;
+    public TextMeshProUGUI playerHealthTXT_R;
     public TextMeshProUGUI l_CPUTXT;
     public TextMeshProUGUI r_CPUTXT;
 
     public void Update()
     {
-        if (!player || playerHealthTXT == null)
+        if (!player || playerHealthTXT_L == null || playerHealthTXT_R == null)
             return;
 
-        AssignDamageable(player, playerHealthTXT, "Health:");
+        AssignDamageable(player, playerHealthTXT_L, "Health:");
+        AssignDamageable(player, playerHealthTXT_R, "Health:");
 
         if (l_CPU && l_CPUTXT != null)
         {

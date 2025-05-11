@@ -1,3 +1,5 @@
+using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,6 +11,9 @@ public class EndScreen : MonoBehaviour
 
     public GameObject successTxt;
     public GameObject failTxt;
+    public TextMeshProUGUI timeTXT;
+
+    private float timeTaken;
 
     private void Start()
     {
@@ -17,6 +22,8 @@ public class EndScreen : MonoBehaviour
 
     private void Update()
     {
+        timeTaken += Time.deltaTime;
+
         if (!player)
         {
             ShowScreen();
@@ -34,6 +41,12 @@ public class EndScreen : MonoBehaviour
 
     private void ShowScreen()
     {
+        if (timeTXT)
+        {
+            timeTaken = Mathf.Round(timeTaken * 100f) / 100f;
+            timeTXT.text = $"Time: {timeTaken}";
+        }
+
         Time.timeScale = 0f;
         for (int i = 0; i < transform.childCount; i++)
         {

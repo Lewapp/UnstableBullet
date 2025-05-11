@@ -59,6 +59,7 @@ public class BulletPatternerEditor : Editor
     private void DrawPattern(SerializedProperty pattern)
     {
         SerializedProperty spawnObject = pattern.FindPropertyRelative("spawnObject");
+        SerializedProperty sound = pattern.FindPropertyRelative("sound");
         SerializedProperty bulletModifiers = pattern.FindPropertyRelative("bulletModifiers");
         SerializedProperty bulletSpeed = pattern.FindPropertyRelative("bulletspeed");
         SerializedProperty shootingType = pattern.FindPropertyRelative("shootingType");
@@ -81,6 +82,7 @@ public class BulletPatternerEditor : Editor
         SerializedProperty amplitude = pattern.FindPropertyRelative("amplitude");
 
         EditorGUILayout.PropertyField(spawnObject);
+        EditorGUILayout.PropertyField(sound);
         EditorGUILayout.PropertyField(bulletModifiers);
         EditorGUILayout.PropertyField(bulletSpeed);
         EditorGUILayout.PropertyField(shootingType);

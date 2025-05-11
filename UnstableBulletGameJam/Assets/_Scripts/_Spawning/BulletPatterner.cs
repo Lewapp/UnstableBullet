@@ -13,6 +13,7 @@ public class BulletPatterner : MonoBehaviour
     {
         [Header("Standard Variables")]
         public GameObject spawnObject;
+        public AudioSource sound;
         public List<BulletModifier> bulletModifiers = new List<BulletModifier>();
         public float bulletspeed;
         public PatternType shootingType;
@@ -146,6 +147,11 @@ public class BulletPatterner : MonoBehaviour
                 break;
         }
            
+        if (bulletPatterns[index].sound)
+        {
+            bulletPatterns[index].sound.Play();
+        }
+
         GameObject spawn = Instantiate(bulletPatterns[index].spawnObject, transform.position, Quaternion.Euler(0, 0, bulletPatterns[index].currentRotation));
         Rigidbody2D rb = spawn.GetComponent<Rigidbody2D>();
     

@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Health : MonoBehaviour, IDamageable
 {
+    public AudioSource hitSound;
     public float maxHealth;
     public float health;
 
@@ -12,6 +13,8 @@ public class Health : MonoBehaviour, IDamageable
 
     public void TakeDamage(float amount)
     {
+        if (hitSound)
+            hitSound.Play();
         health -= amount;
         HealthCheck();
     }
